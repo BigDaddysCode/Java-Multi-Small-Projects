@@ -1,0 +1,33 @@
+package Arrays;
+//Linear Search by big daddy
+import java.util.*;
+public class array02 {
+    public static int linearsearch(int marks[], int key){
+      for(int i=0; i<marks.length;i++){
+        if(marks[i]==key){
+            return i;
+        }
+      }
+      return -1;
+    }
+    public static void main(String Args[]){
+        int marks[]=new int[8];
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the array- ");
+        for(int i=0;i<marks.length;i++){
+        marks[i]=sc.nextInt();
+       }
+       int keey;
+       System.out.println("Enter the key to search in the array---");
+       keey = sc.nextInt();
+       int index = linearsearch(marks, keey);
+
+       if(index == -1){
+        System.out.println("Not Found");
+       }
+       else{
+        System.out.println("key is present at " + index + " index.");
+       }
+       
+    }
+}
