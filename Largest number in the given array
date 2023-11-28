@@ -1,0 +1,24 @@
+package Arrays;
+
+import java.util.Scanner;
+public class array03 {
+    public static int largestnum(int array[]){
+    int largest = Integer.MIN_VALUE;   //- INFINITY
+    for(int i=0;i<array.length;i++){
+        if(array[i]>largest){
+            largest=array[i];
+        }
+    }
+    return largest;
+}
+    public static void main(String Args[]){
+        int array[]=new int[8];
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the array- ");
+        for(int i=0;i<array.length;i++){
+        array[i]=sc.nextInt();
+       }
+       int larnum =  largestnum(array);
+       System.out.println("Largest number in the given array is ---" + larnum);
+    }
+}
