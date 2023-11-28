@@ -1,0 +1,23 @@
+package Arrays;
+//Reverse an array in java
+public class array05 {
+    public static void swaparray(int numbers[]){
+        int start = 0;
+        int last = numbers.length-1 ;
+        while(start<last){
+       int temp = numbers[last];
+       numbers[last] = numbers[start];
+       numbers[start] = temp;
+       start++;
+       last--;
+        }
+    }
+    
+    public static void main(String Args[]){
+        int numbers[] = {2,4,6,7,910,67,54,321};
+        swaparray(numbers);
+        for(int i=0;i<numbers.length;i++){
+            System.out.print(numbers[i] + ",");
+       }
+    }
+}
