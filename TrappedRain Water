@@ -1,0 +1,33 @@
+package Arrays;
+//Rain water trapping problem in java
+public class array11 {
+    public static int trappedrainwater(int number[]){
+        //calculate the left max boundary
+        //calculate the right max boundary
+        //apply loop
+        //water level = min(leftmaxboundary, rightmaxboundary);
+        //trapped water = water level  - height[i]
+        int leftmaxbond [] = new int[number.length];
+        leftmaxbond[0] = number[0];
+        for(int i = 1; i < number.length; i++){
+            leftmaxbond[i] = Math.max(leftmaxbond[i-1], number[i]);
+        }
+
+        int rightmaxbond [] = new int[number.length];
+        rightmaxbond[number.length - 1] = number[number.length - 1];
+        for(int i = number.length-2; i >=0; i--){
+            rightmaxbond[i] = Math.max(rightmaxbond[i+1], number[i]);
+        }
+        int trappedwater = 0;
+        for(int i = 0; i< number.length; i++){
+            int waterlevel = Math.min(rightmaxbond[i], leftmaxbond[i]);
+            trappedwater  += waterlevel-number[i];
+        }
+        return trappedwater;
+
+    }
+    public static void main(String args[]){
+        int height[]= {4,2,0,6,3,2,5,9,10};
+        System.out.println(trappedrainwater(height));
+    }
+}
