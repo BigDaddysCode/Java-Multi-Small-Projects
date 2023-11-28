@@ -1,0 +1,43 @@
+package Arrays;
+
+import java.util.*;
+
+public class array04 {
+    public static int binarysearch(int array[], int key  , int n){
+        int start = 0;
+        int end = n-1;
+        while(start<=end){
+          int mid = (start + end)/2;
+          if(array[mid] == key){
+          return mid;
+          }
+          else if(array[mid] > key){
+            end = mid-1;
+          }
+          else{
+            start = mid+1;
+          }
+        }
+        return -1;
+    }
+    public static void main(String Args[]){
+        int n = 8 ;
+        
+        int array[]=new int[n];
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the array in sorted way- ");
+        for(int i=0;i<array.length;i++){
+        array[i]=sc.nextInt();
+       }
+       int key;
+       System.out.println("Enter the key to search in the array---");
+       key = sc.nextInt();
+       int index = binarysearch(array, key, n);
+       if(index == -1){
+        System.out.println("Not Found");
+       }
+       else{
+        System.out.println("key is present at " + index + " index.");
+       }
+}
+}
