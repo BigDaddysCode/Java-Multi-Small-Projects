@@ -1,0 +1,28 @@
+package FunctionSadvance;
+//function  overloading 
+public class function001 {
+    // parameter function overloading
+    public static int multiply(int a, int b){
+        int c=a*b;
+        return c;
+    }
+    public static int multiply(int a, int b, int c){
+        int m=a*b*c;
+        return m;
+    }
+    //Datatype function overloading
+    public static float multiply(float a, float b){
+        float c=a*b;
+        return c;
+    }
+    public static void main(String Args[]){
+        int a=5;
+        int b=6;
+        int c=9;
+        System.out.println("First function-----"+ multiply(a, b));
+        System.out.println("Second function-----"+ multiply(a, b, c));
+         System.out.println("third function-----"+ multiply(a, b));
+
+
+    }
+}
