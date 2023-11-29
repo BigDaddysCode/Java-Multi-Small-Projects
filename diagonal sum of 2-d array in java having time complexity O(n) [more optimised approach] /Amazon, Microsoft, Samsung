@@ -1,0 +1,21 @@
+package DArrays;
+//diagonal sum of 2-d array in java having time complexity O(n) [more optimised approach]
+//Amazon, Microsoft, Samsung
+public class array007 {
+    public static int diagonalsum(int matrix[][]){
+        int sum = 0;
+        for(int i=0;i<matrix.length;i++){
+            sum +=matrix[i][i];
+            if(i != matrix.length-1-i){
+                sum += matrix[i][matrix.length-1-i];
+            } 
+        }
+        return sum;
+    }
+    public static void main(String args[]){
+        int matrix[][]={{1,2,3},{5,6,7},{9,10,11}};
+        int summ = diagonalsum(matrix);
+        System.out.println("Diagonal sum of given array is " + summ);
+        }
+    
+}
