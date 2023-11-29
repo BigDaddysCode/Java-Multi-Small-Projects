@@ -1,0 +1,18 @@
+package loops;
+import java.util.*;
+//this is big daddy's code
+//break statement eg ==keep entering number till user enter multiple of 10
+public class loops06 {
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        do{
+            System.out.println("Enter your number====");
+            int num=sc.nextInt();
+            if((num%10==0)){
+                break;
+            }
+            System.out.println("Number entered by the user---"+ num);
+        }
+        while(true);
+    }
+}
