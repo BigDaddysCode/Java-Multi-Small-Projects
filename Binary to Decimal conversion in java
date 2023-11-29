@@ -1,0 +1,25 @@
+package Functionsadvance;
+//Binary to decimal conversion in java
+import java.util.*;
+public class functions007 {
+    public static void bintodec(int n){
+        int mynum =n;
+        int pow = 0;
+        int decimal = 0;
+        while ( n > 0){
+            int lastdigit = n%10;
+            decimal = decimal + (lastdigit * (int) Math.pow(2, pow));
+            pow++;
+            n = n/10;
+        }
+        System.out.println("Decimal conversion of " + mynum +" is " + decimal);
+    }
+    public static void main(String args[]){
+    Scanner sc= new Scanner(System.in);
+    //enter only binary number
+    System.out.print("Enter only binary number = ");
+    int num = sc.nextInt();
+    System.out.println();
+    bintodec(num);
+    }
+}
